@@ -21,7 +21,6 @@ body {
     border-radius: 10px;
     text-align: center;
     max-width: 400px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 h2 {
     margin-top: 0;
@@ -29,22 +28,17 @@ h2 {
 }
 input {
     padding: 12px;
-    width: 100%;
+    width: 90%;
     margin: 12px 0;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: none;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: white;
+    color: black;
     font-size: 16px;
-    box-sizing: border-box;
-}
-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
 }
 input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #00c6ff;
+    box-shadow: 0 0 10px #00c6ff;
 }
 button {
     padding: 12px 30px;
@@ -55,35 +49,10 @@ button {
     color: white;
     cursor: pointer;
     margin-top: 15px;
-    width: 100%;
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 button:hover {
     background-color: #0072ff;
-}
-button:active {
-    background-color: #0056cc;
-}
-.error {
-    color: #ff6b6b;
-    margin-top: 15px;
-    font-size: 14px;
-    display: none;
-    font-weight: bold;
-}
-.success {
-    color: #51cf66;
-    margin-top: 15px;
-    font-size: 14px;
-    display: none;
-    font-weight: bold;
-}
-.error.show {
-    display: block;
-}
-.success.show {
-    display: block;
 }
 </style>
 </head>
@@ -93,24 +62,27 @@ button:active {
     <form id="loginForm" onsubmit="handleLogin(event)">
         <input 
             type="text" 
-            id="phone" 
-            placeholder="Telefon raqam (+998901234567)"
+            id="name" 
+            placeholder="Ismingiz"
             required
         >
-        <input 
-            type="password" 
-            id="code" 
-            placeholder="Kod (4 raqamli)"
-            maxlength="4"
-            inputmode="numeric"
-            required
-        >
+        <br>
         <button type="submit">Kirish</button>
     </form>
-    <div class="error" id="errorMessage"></div>
-    <div class="success" id="successMessage"></div>
 </div>
 
-<script src="login.js"></script>
+<script>
+function handleLogin(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    
+    if (name.length > 0) {
+        localStorage.setItem('userName', name);
+        window.location.href = 'dashboard.html';
+    } else {
+        alert('Ismingizni kiriting!');
+    }
+}
+</script>
 </body>
 </html>
