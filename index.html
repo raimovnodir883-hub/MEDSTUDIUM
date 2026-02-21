@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedStudium</title>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color:white;
+    text-align:center;
+}
+.container{
+    padding:100px 20px;
+}
+h1{
+    font-size:48px;
+}
+p{
+    font-size:20px;
+    margin:20px 0;
+}
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+    background-color:#00c6ff;
+    color:white;
+    cursor:pointer;
+}
+button:hover{
+    background-color:#0072ff;
+}
+.features{
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+.card{
+    background:white;
+    color:black;
+    padding:20px;
+    width:250px;
+    border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MedStudium</h1>
+    <p>Tibbiy bilimni AI bilan chuqurlashtir</p>
+    <button onclick="alert('Login sahifasi keyingi bosqichda qo‘shiladi')">
+        Boshlash
+    </button>
+
+    <div class="features">
+        <div class="card">
+            <h3>📝 Test</h3>
+            <p>Fanlar bo‘yicha test sinovlari</p>
+        </div>
+        <div class="card">
+            <h3>📚 Dars</h3>
+            <p>5 xil o‘rganish usuli</p>
+        </div>
+        <div class="card">
+            <h3>🏥 Amaliyot</h3>
+            <p>Klinik case va tayyorgarlik</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
