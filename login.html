@@ -5,54 +5,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MedStudium Login</title>
 <style>
-body{
+body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-.container{
-    background: rgba(255,255,255,0.1);
-    padding:40px;
-    border-radius:10px;
-    text-align:center;
-    max-width:400px;
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
-input{
-    padding:10px;
-    width:90%;
-    margin:10px 0;
-    border-radius:5px;
-    border:none;
-    font-size:16px;
+h2 {
+    margin-top: 0;
+    font-size: 28px;
 }
-button{
-    padding:12px 25px;
-    font-size:16px;
-    border:none;
-    border-radius:5px;
-    background-color:#00c6ff;
-    color:white;
-    cursor:pointer;
-    margin-top:15px;
+input {
+    padding: 12px;
+    width: 100%;
+    margin: 12px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
 }
-button:hover{
-    background-color:#0072ff;
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
-.error{
-    color:#ff6b6b;
-    margin-top:10px;
-    font-size:14px;
-    display:none;
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #00c6ff;
 }
-.success{
-    color:#51cf66;
-    margin-top:10px;
-    font-size:14px;
-    display:none;
+button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00c6ff;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0072ff;
+}
+button:active {
+    background-color: #0056cc;
+}
+.error {
+    color: #ff6b6b;
+    margin-top: 15px;
+    font-size: 14px;
+    display: none;
+    font-weight: bold;
+}
+.success {
+    color: #51cf66;
+    margin-top: 15px;
+    font-size: 14px;
+    display: none;
+    font-weight: bold;
+}
+.error.show {
+    display: block;
+}
+.success.show {
+    display: block;
 }
 </style>
 </head>
@@ -63,18 +94,17 @@ button:hover{
         <input 
             type="text" 
             id="phone" 
-            placeholder="Telefon raqam (masalan: +998901234567)"
+            placeholder="Telefon raqam (+998901234567)"
             required
         >
-        <br>
         <input 
             type="password" 
             id="code" 
-            placeholder="Kod (4 raqamli kod)"
+            placeholder="Kod (4 raqamli)"
             maxlength="4"
+            inputmode="numeric"
             required
         >
-        <br>
         <button type="submit">Kirish</button>
     </form>
     <div class="error" id="errorMessage"></div>
